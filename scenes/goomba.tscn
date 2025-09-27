@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://gms47lopsxse"]
+[gd_scene load_steps=10 format=3 uid="uid://gms47lopsxse"]
 
 [ext_resource type="Texture2D" uid="uid://b8fnr5t52su2p" path="res://assets/enemies/goomba.png" id="1_21hcc"]
 [ext_resource type="Script" uid="uid://bb7sk6ew1ukvd" path="res://scripts/goomba.gd" id="1_s1jgw"]
@@ -38,6 +38,9 @@ size = Vector2(24.75, 37.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1jgw"]
 size = Vector2(20, 4)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgpj4"]
+size = Vector2(36, 37)
+
 [node name="Goomba" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 5
@@ -66,4 +69,11 @@ position = Vector2(0, -42)
 shape = SubResource("RectangleShape2D_s1jgw")
 one_way_collision_margin = 10.1
 
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_fgpj4")
+
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
