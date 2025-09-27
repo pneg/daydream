@@ -39,7 +39,8 @@ size = Vector2(24.75, 37.75)
 size = Vector2(20, 4)
 
 [node name="Goomba" type="CharacterBody2D"]
-collision_layer = 0
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_s1jgw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -47,7 +48,7 @@ position = Vector2(0.9999995, -23.000002)
 scale = Vector2(1.375, 1.375)
 sprite_frames = SubResource("SpriteFrames_5lml2")
 animation = &"walk"
-frame_progress = 0.430893
+frame_progress = 0.9804176
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.375, -19.125)
@@ -55,6 +56,7 @@ shape = SubResource("RectangleShape2D_21hcc")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -27)
+collision_mask = 4
 
 [node name="killzone" type="Area2D" parent="."]
 collision_layer = 0
