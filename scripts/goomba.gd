@@ -30,8 +30,3 @@ func detect_turn_around():
 
 func _on_killzone_body_entered(body: Node2D) -> void:
 	queue_free()
-
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		body.respawn_world()
