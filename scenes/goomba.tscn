@@ -36,10 +36,10 @@ animations = [{
 size = Vector2(24.75, 37.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1jgw"]
-size = Vector2(20, 4)
+size = Vector2(29, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgpj4"]
-size = Vector2(36, 37)
+size = Vector2(30, 30.5)
 
 [node name="Goomba" type="CharacterBody2D"]
 collision_layer = 2
@@ -65,14 +65,14 @@ collision_mask = 4
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(0, -42)
+position = Vector2(-1, -42)
 shape = SubResource("RectangleShape2D_s1jgw")
 one_way_collision_margin = 10.1
 
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -20)
+position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_fgpj4")
 
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
