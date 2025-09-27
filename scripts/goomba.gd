@@ -20,11 +20,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func detect_turn_around():
-	if not raycast.is_colliding() and is_on_floor():
-		is_moving_left = !is_moving_left
-		scale.x = -scale.x
-
-	if is_on_wall():
+	if not raycast.is_colliding() and is_on_floor() or is_on_wall():
 		is_moving_left = !is_moving_left
 		scale.x = -scale.x
 
