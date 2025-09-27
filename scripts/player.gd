@@ -20,7 +20,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, 60)
-
+  
+	# Animation
 	if direction < 0:
 		animated_sprite.play("walk_left")
 	elif direction > 0:
