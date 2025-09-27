@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://gms47lopsxse"]
+
+[ext_resource type="Texture2D" uid="uid://b8fnr5t52su2p" path="res://assets/enemies/goomba.png" id="1_21hcc"]
+[ext_resource type="Script" uid="uid://bb7sk6ew1ukvd" path="res://scripts/goomba.gd" id="1_s1jgw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1jgw"]
+atlas = ExtResource("1_21hcc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgpj4"]
+atlas = ExtResource("1_21hcc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0j8n"]
+atlas = ExtResource("1_21hcc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lml2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1jgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgpj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0j8n")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21hcc"]
+size = Vector2(24.75, 37.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1jgw"]
+size = Vector2(20, 4)
+
+[node name="Goomba" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_s1jgw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.9999995, -23.000002)
+scale = Vector2(1.375, 1.375)
+sprite_frames = SubResource("SpriteFrames_5lml2")
+animation = &"walk"
+frame_progress = 0.430893
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.375, -19.125)
+shape = SubResource("RectangleShape2D_21hcc")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -27)
+
+[node name="killzone" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, -42)
+shape = SubResource("RectangleShape2D_s1jgw")
+one_way_collision_margin = 10.1
+
+[connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]

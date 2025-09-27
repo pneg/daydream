@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://4syamko6i0q"]
+[gd_scene load_steps=6 format=4 uid="uid://4syamko6i0q"]
 
 [ext_resource type="Texture2D" uid="uid://cm2opgj2amdqo" path="res://assets/green.png" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://cvm5028ryhlx8" path="res://scenes/player.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://gms47lopsxse" path="res://scenes/goomba.tscn" id="3_sugp2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_272bh"]
 texture = ExtResource("1_o5qli")
@@ -820,3 +821,6 @@ tile_set = SubResource("TileSet_5vw27")
 
 [node name="Player" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(280, 344)
+
+[node name="Goomba" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(125, 578)
