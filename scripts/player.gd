@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+@export var maxHealth = 100.0
+@onready var currentHealth: float = maxHealth
+
+signal healthChanged
+
 const SPEED = 400.0
 const JUMP_VELOCITY = -900.0
 
@@ -34,6 +39,10 @@ func _physics_process(delta: float) -> void:
 	var screen_bottom := get_viewport_rect().size.y
 	if global_position.y > screen_bottom + 500:
 		respawn_world()
+
+func hit(damage: int):
+	currentHealth -= damage
+	healthChanged.emit()
 
 func respawn_world():
 	get_tree().change_scene_to_file(MAIN_SCENE_PATH)

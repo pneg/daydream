@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+@export var attackDamage = 33
+
 var GRAVITY = 10
 const SPEED = 65.0
 const JUMP_VELOCITY = -400.0

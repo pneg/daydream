@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://4syamko6i0q"]
+[gd_scene load_steps=8 format=4 uid="uid://4syamko6i0q"]
 
 [ext_resource type="Texture2D" uid="uid://4smbcg2i7au8" path="res://assets/terrain.png" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cvm5028ryhlx8" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://gms47lopsxse" path="res://scenes/goomba.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://2kgdcsx1jkgq" path="res://scenes/boxer.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://clshaq0ya76vu" path="res://scenes/healthBar.gd" id="5_tbgi4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
 texture = ExtResource("1_sugp2")
@@ -177,3 +178,10 @@ position = Vector2(125, 578)
 
 [node name="Boxer" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(780, 601)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+offset_right = 37.0
+offset_bottom = 27.0
+script = ExtResource("5_tbgi4")

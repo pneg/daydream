@@ -110,6 +110,7 @@ animations = [{
 size = Vector2(32.5, 46)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(-2, 0)
 collision_mask = 6
 slide_on_ceiling = false
 script = ExtResource("1_onrkg")

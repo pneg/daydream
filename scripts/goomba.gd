@@ -4,9 +4,11 @@ extends CharacterBody2D
 @onready var killzone: Area2D = $killzone
 @onready var raycast: RayCast2D = $RayCast2D
 
-var GRAVITY = 10
+
+const GRAVITY = 10
 const SPEED = 65.0
 const JUMP_VELOCITY = -400.0
+@export var attackDamage = 33
 
 var is_moving_left = true
 
