@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @export var isCyborg = false
 
+
 @export var attackDamage = 33
 
 var GRAVITY = 10
@@ -12,6 +13,7 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 var is_moving_left = false
+
 var is_hitting = false
 var player_in_detector = false
 var player_in_attack_area = false
@@ -35,7 +37,6 @@ func detect_turn_around():
 	if not raycast.is_colliding() and is_on_floor() or is_on_wall():
 		is_moving_left = !is_moving_left
 		scale.x = -scale.x
-
 
 func _on_player_detector_body_entered(body: Node2D) -> void:
 	is_hitting = true
