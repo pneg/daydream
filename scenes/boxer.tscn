@@ -74,10 +74,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irs4o"]
-size = Vector2(20.5, 64.5)
+size = Vector2(20.5, 57.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh8kf"]
-size = Vector2(17, 63)
+size = Vector2(17, 64.5)
 
 [node name="Boxer" type="CharacterBody2D"]
 collision_layer = 2
@@ -96,11 +96,11 @@ collision_layer = 0
 script = ExtResource("2_mh8kf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3, -35)
+position = Vector2(-3, -31.375)
 shape = SubResource("RectangleShape2D_irs4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -32)
+position = Vector2(-2, -32.75)
 shape = SubResource("RectangleShape2D_mh8kf")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

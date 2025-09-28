@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var attackDamage = 33
 
 var GRAVITY = 10
-const SPEED = 65.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 var is_moving_left = false
