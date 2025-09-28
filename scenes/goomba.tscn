@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://gms47lopsxse"]
+[gd_scene load_steps=11 format=3 uid="uid://gms47lopsxse"]
 
 [ext_resource type="Texture2D" uid="uid://b8fnr5t52su2p" path="res://assets/enemies/goomba.png" id="1_21hcc"]
 [ext_resource type="Script" uid="uid://bb7sk6ew1ukvd" path="res://scripts/goomba.gd" id="1_s1jgw"]
+[ext_resource type="Script" uid="uid://cw7xe0hy3vhwf" path="res://scripts/hitbox.gd" id="4_l0j8n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1jgw"]
 atlas = ExtResource("1_21hcc")
@@ -36,10 +37,10 @@ animations = [{
 size = Vector2(24.75, 37.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s1jgw"]
-size = Vector2(29, 4)
+size = Vector2(20, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgpj4"]
-size = Vector2(30, 30.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lml2"]
+size = Vector2(31, 32.25)
 
 [node name="Goomba" type="CharacterBody2D"]
 collision_layer = 2
@@ -58,22 +59,24 @@ position = Vector2(-0.375, -19.125)
 shape = SubResource("RectangleShape2D_21hcc")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(0, -27)
+position = Vector2(-10, -27)
 collision_mask = 4
 
 [node name="killzone" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(-1, -42)
+position = Vector2(0, -42)
 shape = SubResource("RectangleShape2D_s1jgw")
 one_way_collision_margin = 10.1
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("4_l0j8n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, -18)
-shape = SubResource("RectangleShape2D_fgpj4")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -18.875)
+shape = SubResource("RectangleShape2D_5lml2")
 
 [connection signal="body_entered" from="killzone" to="." method="_on_killzone_body_entered"]
-[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvm5028ryhlx8"]
+[gd_scene load_steps=19 format=3 uid="uid://cvm5028ryhlx8"]
 
 [ext_resource type="Script" uid="uid://d0y7p57jdphiw" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://cdd4tgux438hy" path="res://scenes/Bullet.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://4cbpmoryba61" path="res://assets/player/WalkLeft.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cn60kvcqm3ee4" path="res://assets/player/WalkRight.png" id="3_dqkch"]
 
@@ -110,9 +111,11 @@ animations = [{
 size = Vector2(32.5, 46)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(-2, 0)
 collision_mask = 6
 slide_on_ceiling = false
 script = ExtResource("1_onrkg")
+bullet_scene = ExtResource("2_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.9999995, -43)
