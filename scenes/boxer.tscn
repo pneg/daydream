@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=17 format=3 uid="uid://2kgdcsx1jkgq"]
-
 
 [ext_resource type="Texture2D" uid="uid://rpi04khjk231" path="res://assets/enemies/boxer.png" id="1_covc4"]
 [ext_resource type="Script" uid="uid://crbvw18o2nm24" path="res://scenes/boxer.gd" id="1_irs4o"]
@@ -81,7 +79,6 @@ size = Vector2(20.5, 57.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh8kf"]
 size = Vector2(17, 64.5)
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocnvc"]
 size = Vector2(40, 71)
 
@@ -98,7 +95,6 @@ position = Vector2(7.000001, -57)
 scale = Vector2(1.9179688, 1.9179688)
 sprite_frames = SubResource("SpriteFrames_a1r27")
 animation = &"punch"
-
 frame_progress = 0.65063614
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -110,15 +106,12 @@ position = Vector2(-3, -31.375)
 shape = SubResource("RectangleShape2D_irs4o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 position = Vector2(-3, -33)
-
 shape = SubResource("RectangleShape2D_mh8kf")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(5, -39)
 collision_mask = 4
-
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 collision_layer = 0
@@ -140,4 +133,3 @@ shape = SubResource("RectangleShape2D_fwhie")
 [connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
-

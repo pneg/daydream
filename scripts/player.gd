@@ -6,11 +6,6 @@ extends CharacterBody2D
 
 signal healthChanged
 
-@export var maxHealth = 100.0
-@onready var currentHealth: float = maxHealth
-
-signal healthChanged
-
 const SPEED = 400.0
 const JUMP_VELOCITY = -900.0
 const MAIN_SCENE_PATH = "res://scenes/main.tscn"
@@ -80,7 +75,7 @@ func shoot():
 			bullet.direction = Vector2.RIGHT
 			bullet.position = global_position + offset
 			bullet.rotation = 0
-
+			
 		get_parent().add_child(bullet)
 	else:
 		print("Not enough health to shoot!")
