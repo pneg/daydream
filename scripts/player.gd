@@ -53,6 +53,9 @@ func hit(damage: int):
 		respawn_world()
 
 func respawn_world():
+	call_deferred("_do_respawn")
+
+func _do_respawn():
 	get_tree().change_scene_to_file(MAIN_SCENE_PATH)
 
 func shoot():
