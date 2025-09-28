@@ -369,6 +369,15 @@ scale = Vector2(2, 2)
 text = "WASD and space to shoot. Be mindful of your energy!"
 horizontal_alignment = 1
 
+[node name="Cyborg67" type="RichTextLabel" parent="."]
+offset_left = 67.0
+offset_top = 182.0
+offset_right = 227.0
+offset_bottom = 278.0
+scale = Vector2(4, 4)
+text = "CYBORG-#67"
+horizontal_alignment = 1
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
