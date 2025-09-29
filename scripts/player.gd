@@ -74,7 +74,7 @@ func shoot():
 			bullet.direction = Vector2.RIGHT
 			bullet.position = global_position + offset
 			bullet.rotation = 0
-
+			
 		get_parent().add_child(bullet)
 	else:
 		print("Not enough health to shoot!")
