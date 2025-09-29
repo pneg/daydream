@@ -13,14 +13,13 @@ const JUMP_VELOCITY = -400.0
 var is_moving_left = true
 
 func _physics_process(delta: float) -> void:
+	detect_turn_around()
 	velocity.x = -SPEED if is_moving_left else SPEED
 	velocity.y += GRAVITY
 
 	animated_sprite.play("walk")
 
 	move_and_slide()
-	# is_on_wall MUST be called after move_and_slide
-	detect_turn_around()
 
 func detect_turn_around():
 	if not raycast.is_colliding() and is_on_floor() or is_on_wall():
